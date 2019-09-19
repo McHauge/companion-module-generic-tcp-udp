@@ -23,8 +23,6 @@
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/bitfocus/companion-module-generic-tcp-udp/issues"
-	},
-	"dependencies": {
 	}
 }
 
