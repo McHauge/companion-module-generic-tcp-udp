@@ -1,4 +1,4 @@
-## DEXON DIMAX-Pro
+## Generic TCP and UDP module
 
 A generic module for performing simple TCP and UDP requests
 
@@ -10,7 +10,7 @@ https://github.com/bitfocus/companion-module-requests/issues
 
 In that way, more people will get to benefit from this in the future, thanks. 
 
-**Available commands for DEXON DIMAX-Pro**
+**Available commands in this module**
 
 * Send TCP
 * Send UDP

@@ -10,3 +10,6 @@ In that way, more people will get to benefit from this in the future, thanks.
 
 **V1.0.0**
 A generic module for performing simple TCP and UDP requests, for more info look in HELP.md
+
+**V1.0.1**
+-Fixed errors in HELP.md file
