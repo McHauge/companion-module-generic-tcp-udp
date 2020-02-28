@@ -13,3 +13,6 @@ A generic module for performing simple TCP and UDP requests, for more info look 
 
 **V1.0.1**
 -Fixed errors in HELP.md file
+
+**V1.0.2**
+-Added the option to chose the end caractors: \r, \n, \r\n, \n\r or none at all.

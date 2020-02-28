@@ -175,6 +175,14 @@ instance.prototype.destroy = function() {
 	debug("destroy", self.id);;
 };
 
+instance.prototype.CHOICES_END = [
+	{ id: '', 			label: 'None' },
+	{ id: '\r', 		label: '\\r' },
+	{ id: '\n', 		label: '\\n' },
+	{ id: '\r\n', 	label: '\\r\\n' },
+	{ id: '\n\r', 	label: '\\n\\r' },
+];
+
 instance.prototype.init_presets = function () {
 	var self = this;
 	var presets = [];
@@ -197,6 +205,14 @@ instance.prototype.actions = function(system) {
 					default: '',
 					width: 6
 				},
+				{
+					type: 'dropdown',
+					id: 'id_end',
+					label: 'Command End Caracter:',
+					default: '\r',
+					choices: self.CHOICES_END
+				}
+
 			]
 		}
 	});
@@ -204,13 +220,14 @@ instance.prototype.actions = function(system) {
 
 instance.prototype.action = function(action) {
 	var self = this;
-	var cmd
-	var opt = action.options
+	var cmd;
+	var end;
 
 	switch(action.action) {
 
 		case 'send':
 			cmd = action.options.id_send;
+			end = action.options.id_end;
 			break;
 
 	}
@@ -219,10 +236,10 @@ instance.prototype.action = function(action) {
 
 		if (cmd !== undefined) {
 
-			debug('sending ',cmd,"to",self.config.host);
+			debug('sending ',cmd + end,"to",self.config.host);
 
 			if (self.socket !== undefined && self.socket.connected) {
-				self.socket.send(cmd);
+				self.socket.send(cmd + end);
 			}
 			else {
 				debug('Socket not connected :(');
@@ -235,9 +252,9 @@ instance.prototype.action = function(action) {
 		if (cmd !== undefined ) {
 
 			if (self.udp !== undefined ) {
-				debug('sending',cmd,"to",self.config.host);
+				debug('sending',cmd + end,"to",self.config.host);
 
-				self.udp.send(cmd);
+				self.udp.send(cmd + end);
 			}
 		}
 	}
