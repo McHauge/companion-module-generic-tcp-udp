@@ -1,6 +1,7 @@
 # companion-module-generic-tcp-udp
 
-**Please note this mudule is out of date and all newer updates will be over at:** 
+**Please note this mudule is out of date and all newer updates will be over at:**
+
 https://github.com/bitfocus/companion-module-generic-tcp-udp
 
 If you are using this plugin, 
